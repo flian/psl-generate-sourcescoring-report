@@ -102,20 +102,21 @@ public class Main extends Application {
 
         //log textArea
         Label label4 = new Label("logs:");
-        TextArea log = new TextArea();
-        log.appendText("log will display here!");
+        TextArea logArea = new TextArea();
+        logArea.appendText("log will display here!\n");
         GridPane.setConstraints(label4, 0, 4);
-        GridPane.setConstraints(log, 1, 4);
-        grid.getChildren().addAll(label4, log);
+        GridPane.setConstraints(logArea, 1, 4);
+        grid.getChildren().addAll(label4, logArea);
 
         primaryStage.show();
-
+        SourceScoringTask task = new SourceScoringTask();
         submit.setOnAction(event -> {
-            SourceScoringTask task = new SourceScoringTask(sourceFile.getText(), outputFolder.getText(), log);
-            //status bind
-            browser1.visibleProperty().bind(task.runningProperty());
-            browser2.visibleProperty().bind(task.runningProperty());
-            browser3.visibleProperty().bind(task.runningProperty());
+            task.setUp(sourceFile.getText(),
+                    outputFolder.getText()+"/"+System.currentTimeMillis()+".csv", logArea);
+            //status bind. visible or show?
+            // browser1.visibleProperty().bind(task.runningProperty());
+            //browser2.visibleProperty().bind(task.runningProperty());
+            //browser3.visibleProperty().bind(task.runningProperty());
             new Thread(task).start();
         });
 
