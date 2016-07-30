@@ -54,7 +54,7 @@ public class SourceScoringTask  extends Task<Void> {
                 }
                 //just for example...
                 for(String k: KEY_WORDS){
-                    if(target.contains(k)){
+                    if(target.startsWith(k)){
                         String tmp=sourceString.getID()+","+sourceString.getText();
                         log.appendText(tmp);
                         fw.write(tmp);
