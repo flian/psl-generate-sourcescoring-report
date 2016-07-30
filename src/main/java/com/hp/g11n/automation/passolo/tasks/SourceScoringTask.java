@@ -8,7 +8,6 @@ import javafx.scene.control.TextArea;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.util.HashSet;
 import java.util.Set;
 

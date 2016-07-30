@@ -31,7 +31,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("Source Scoring!");
         Group root = new Group();
-        Scene scene = new Scene(root, 350, 200);
+        Scene scene = new Scene(root, 700, 250);
         primaryStage.setScene(scene);
 
         GridPane grid = new GridPane();
