@@ -64,7 +64,12 @@ public class SourceScoringTask  extends Task<Void> {
                 }
             }
         }
+
+
         log.appendText("process source lists done...");
+
+        fw.close();
+
         // Close the project.
         project.close();
         // Shut down passolo instance.

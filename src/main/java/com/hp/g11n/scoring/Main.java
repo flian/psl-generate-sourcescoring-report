@@ -1,6 +1,7 @@
 package com.hp.g11n.scoring;
 
 
+import com.hp.g11n.automation.passolo.tasks.SourceScoringTask;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
@@ -24,6 +26,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        Region veil = new Region();
+        veil.setStyle("-fx-background-color: rgba(0, 0, 0, 0.4)");
+
         primaryStage.setTitle("Source Scoring!");
         Group root = new Group();
         Scene scene = new Scene(root, 350, 200);
@@ -66,6 +71,8 @@ public class Main extends Application {
         GridPane.setConstraints(browser2, 2, 1);
         grid.getChildren().addAll(label2,exclusionFile,browser2);
 
+
+
         //output folder
         Label label3 = new Label("Write Output to the folder:");
         Button browser3 = new Button("Browse...");
@@ -84,6 +91,7 @@ public class Main extends Application {
 
         //button
         Button submit = new Button("Run");
+
         GridPane.setConstraints(submit, 1, 3);
         grid.getChildren().add(submit);
 
@@ -91,13 +99,25 @@ public class Main extends Application {
         GridPane.setConstraints(clear, 2, 3);
         grid.getChildren().add(clear);
 
+
         //log textArea
         Label label4 = new Label("logs:");
         TextArea log = new TextArea();
         log.appendText("log will display here!");
-        GridPane.setConstraints(label4,0,4);
-        GridPane.setConstraints(log,1,4);
-        grid.getChildren().addAll(label4,log);
+        GridPane.setConstraints(label4, 0, 4);
+        GridPane.setConstraints(log, 1, 4);
+        grid.getChildren().addAll(label4, log);
+
         primaryStage.show();
+
+        submit.setOnAction(event -> {
+            SourceScoringTask task = new SourceScoringTask(sourceFile.getText(), outputFolder.getText(), log);
+            //status bind
+            browser1.visibleProperty().bind(task.runningProperty());
+            browser2.visibleProperty().bind(task.runningProperty());
+            browser3.visibleProperty().bind(task.runningProperty());
+            new Thread(task).start();
+        });
+
     }
 }
