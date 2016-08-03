@@ -40,12 +40,17 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>appassembler-maven-plugin</artifactId>
-                        <configuration>
+                    <!--    <executions>
+                         <execution>
+                         <goals>
+                            <goal>assemble</goal>
+                         </goals>-->
+                         <configuration>
+                            <extraJvmArguments>-Djava.library.path=@BASEDIR@\lib -Dcom.jacob.debug=true -Dconsole.log-level=DEBUG</extraJvmArguments>
+
                             <programs>
                                 <program>
-                                    <id>
-                                        sourceScoring-Standalone-GUI
-                                    </id>
+                                    <id>sourceScoring-Standalone-GUI</id>
                                     <mainClass>
                                             com.hp.g11n.scoring.Main
                                     </mainClass>
@@ -56,12 +61,16 @@
 
                                         </systemProperties>
                                         <extraArguments>
-
-                                        </extraArguments>
+                                          <extraArgument>-Djava.library.path=@BASEDIR@\lib</extraArgument>
+                                          <extraArgument>-Dconsole.log-level=DEBUG</extraArgument>
+                                          <extraArgument>-Dcom.jacob.debug=true</extraArgument>
+                                       </extraArguments>
                                     </jvmSettings>
                                 </program>
                             </programs>
                         </configuration>
+                    <!--    </execution>
+                        </executions>-->
                     </plugin>
                     <plugin>
                         <artifactId>maven-assembly-plugin</artifactId>
