@@ -46,7 +46,7 @@
                             <goal>assemble</goal>
                          </goals>-->
                          <configuration>
-                            <extraJvmArguments>-Djava.library.path=@BASEDIR@\lib -Dcom.jacob.debug=true -Dconsole.log-level=DEBUG</extraJvmArguments>
+                            <extraJvmArguments>-Djava.library.path=@BASEDIR@\lib -Dcom.jacob.debug=true -Dconsole.log-level=INFO</extraJvmArguments>
 
                             <programs>
                                 <program>
