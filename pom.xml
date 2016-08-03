@@ -66,6 +66,31 @@
                     <plugin>
                         <artifactId>maven-assembly-plugin</artifactId>
                     </plugin>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                            <id>copy-jacob-dll-resources</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                                <configuration>
+                                    <overwrite>true</overwrite>
+                                    <outputDirectory>${dist.directory}/lib</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>/src/main/resources/lib</directory>
+                                            <includes>
+                                                <include>*.dll</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+
+                    </plugin>
                 </plugins>
             </build>
         </profile>
