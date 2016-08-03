@@ -40,11 +40,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>appassembler-maven-plugin</artifactId>
-                    <!--    <executions>
-                         <execution>
-                         <goals>
-                            <goal>assemble</goal>
-                         </goals>-->
+
                          <configuration>
                             <extraJvmArguments>-Djava.library.path=@BASEDIR@\lib -Dcom.jacob.debug=true -Dconsole.log-level=INFO</extraJvmArguments>
 
@@ -69,8 +65,7 @@
                                 </program>
                             </programs>
                         </configuration>
-                    <!--    </execution>
-                        </executions>-->
+
                     </plugin>
                     <plugin>
                         <artifactId>maven-assembly-plugin</artifactId>
