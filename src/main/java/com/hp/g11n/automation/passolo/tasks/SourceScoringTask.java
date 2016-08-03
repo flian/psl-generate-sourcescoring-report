@@ -33,7 +33,7 @@ public class SourceScoringTask  extends Task<Void> {
 
     @Override
     protected Void call() throws Exception {
-        int needCnt=3;
+        int needCnt=5;
         //input
         File[] lpuFiles = (new File(source)).listFiles((File f) -> !f.isDirectory() && f.getName().endsWith(".lpu"));
         File lpuFile=lpuFiles[0];

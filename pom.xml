@@ -40,6 +40,28 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>appassembler-maven-plugin</artifactId>
+                        <configuration>
+                            <programs>
+                                <program>
+                                    <id>
+                                        sourceScoring-Standalone-GUI
+                                    </id>
+                                    <mainClass>
+                                            com.hp.g11n.scoring.Main
+                                    </mainClass>
+                                    <jvmSettings>
+                                        <initialMemorySize>256m</initialMemorySize>
+                                        <maxMemorySize>1024m</maxMemorySize>
+                                        <systemProperties>
+
+                                        </systemProperties>
+                                        <extraArguments>
+
+                                        </extraArguments>
+                                    </jvmSettings>
+                                </program>
+                            </programs>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <artifactId>maven-assembly-plugin</artifactId>
