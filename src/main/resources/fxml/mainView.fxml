@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox layoutX="27.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="563.0">
+         <children>
+            <Label prefHeight="14.0" prefWidth="147.0" text="File to be processed *: " />
+            <TextField prefHeight="22.0" prefWidth="333.0" text="c:/tmp/psl-generate-sorucescoring-report" />
+            <Button mnemonicParsing="false" text="Browser..." />
+         </children>
+      </HBox>
+      <HBox layoutX="27.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="563.0">
+         <children>
+            <Label prefHeight="14.0" prefWidth="150.0" text="Exclusion File Path:" />
+            <TextField prefHeight="22.0" prefWidth="332.0" />
+            <Button mnemonicParsing="false" text="Browser..." />
+         </children>
+      </HBox>
+      <HBox layoutX="27.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="557.0">
+         <children>
+            <Label prefHeight="14.0" prefWidth="149.0" text="Write Output to the folder:" />
+            <TextField prefHeight="22.0" prefWidth="334.0" text="c:/tmp/psl-generate-sorucescoring-report" />
+            <Button mnemonicParsing="false" text="Browser..." />
+         </children>
+      </HBox>
+      <HBox layoutX="130.0" layoutY="239.0" prefHeight="22.0" prefWidth="141.0">
+         <children>
+            <Button mnemonicParsing="false" text="Run" />
+         </children>
+      </HBox>
+      <Button layoutX="317.0" layoutY="239.0" mnemonicParsing="false" text="Cancel" />
+      <TextArea layoutX="10.0" layoutY="276.0" prefHeight="190.0" prefWidth="563.0" />
+   </children>
+</Pane>
