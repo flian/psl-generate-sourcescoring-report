@@ -2,6 +2,7 @@ package com.hp.g11n.scoring;
 
 
 import com.hp.g11n.automation.passolo.tasks.SourceScoringTask;
+import com.hp.g11n.automation.passolo.tasks.SourceScoringTmsTask;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -109,7 +110,7 @@ public class Main extends Application {
         grid.getChildren().addAll(label4, logArea);
 
         primaryStage.show();
-        SourceScoringTask task = new SourceScoringTask();
+        SourceScoringTmsTask task = new SourceScoringTmsTask();
         submit.setOnAction(event -> {
             task.setUp(sourceFile.getText(),
                     outputFolder.getText()+"/"+System.currentTimeMillis()+".csv", logArea);
