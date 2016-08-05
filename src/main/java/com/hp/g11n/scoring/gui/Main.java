@@ -1,7 +1,6 @@
-package com.hp.g11n.scoring;
+package com.hp.g11n.scoring.gui;
 
 
-import com.hp.g11n.automation.passolo.tasks.SourceScoringTask;
 import com.hp.g11n.automation.passolo.tasks.SourceScoringTmsTask;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
